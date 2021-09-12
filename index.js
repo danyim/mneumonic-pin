@@ -46,3 +46,4 @@ Usage:
     catch (err) { }
 }
 init();
+//# sourceMappingURL=index.js.map

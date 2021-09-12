@@ -3,6 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.validatePin = exports.unrotateSeed = exports.rotateSeed = exports.generateSeed = void 0;
 const bip39_json_1 = __importDefault(require("./bip39.json"));
 /** Generates a mneumonic seed. For testing purposes only. */
 function generateSeed(words = 24) {
