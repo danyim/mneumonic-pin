@@ -1,29 +1,11 @@
-import yargsInteractive from "yargs-interactive";
+import yargs from "yargs";
 import { rotateSeed, unrotateSeed } from "./src/lib";
 
-const options: any = {
-  seed: {
-    type: "input",
-    describe: "Enter your mneumonic seed (24 words)",
-    alias: "s",
-  },
-  pin: {
-    type: "confirm",
-    describe: "PIN (must be exactly 4 digits 1-6)",
-    alias: "p",
-  },
-  unrotate: {
-    type: "boolean",
-    default: false,
-    describe: "Unrotate the seed with the PIN",
-    alias: "u",
-  },
-};
-
-yargsInteractive()
-  .usage(
-    `
-Wallet mneumoic seed rotator using a PIN
+async function init() {
+  try {
+    const argv = await yargs(process.argv.slice(2))
+      .usage(
+        `Wallet mneumoic seed rotator using a PIN
 
 $0 <command> [args]
 
@@ -32,15 +14,37 @@ Usage:
     $0 --seed="your_seed" --pin=1234
   Unrotate seed:
     $0 --seed="your_seed" --pin=1234 --unrotate`
-  )
-  .interactive(options)
-  .then((result) => {
-    // Your business logic goes here.
-    // Get the arguments from the result
-    // e.g. myCli(result.name);
-    const operation = result.unrotate ? unrotateSeed : rotateSeed;
+      )
+      .options({
+        seed: {
+          type: "string",
+          describe: "Your mneumonic seed (24 words)",
+          alias: "s",
+        },
+        pin: {
+          type: "string",
+          describe: "PIN (must be exactly 4 digits 1-6)",
+          alias: "p",
+        },
+        unrotate: {
+          type: "boolean",
+          default: false,
+          describe: "Unrotate the seed with the PIN",
+          alias: "u",
+        },
+      })
+      .parseSync();
+
+    if (!argv.seed || !argv.pin) {
+      throw new Error("Invalid input");
+    }
+
+    const operation = argv.unrotate ? unrotateSeed : rotateSeed;
     console.log(
-      `- Original seed: ${result.seed}\n` +
-        `- New seed: ${operation(result.seed, result.pin)}\n`
+      `- Original seed: ${argv.seed}\n` +
+        `- New seed: ${operation(argv.seed, argv.pin)}\n`
     );
-  });
+  } catch (err) {}
+}
+
+init();

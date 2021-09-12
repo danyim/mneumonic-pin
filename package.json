@@ -2,28 +2,26 @@
   "name": "menumonic-pin",
   "version": "0.1.0",
   "description": "Wallet mneumoic seed rotator using a PIN",
-  "main": "index.ts",
   "author": "Daniel Yim <danielyim@gmail.com>",
   "license": "MIT",
   "private": false,
+  "main": "./dist/index.js",
   "bin": "./dist/index.js",
   "devDependencies": {
     "@types/jest": "^27.0.1",
     "@types/yargs": "^17.0.2",
-    "@types/yargs-interactive": "^2.1.2",
     "jest": "^27.1.1",
-    "prettier": "^2.4.0",
     "ts-jest": "^27.0.5",
     "ts-node": "^10.2.1",
     "typescript": "^4.4.3"
   },
   "scripts": {
     "start": "ts-node ./index.ts",
-    "compile": "tsc compile",
+    "compile": "tsc compile ./src",
     "test": "jest"
   },
   "dependencies": {
-    "yargs-interactive": "^3.0.0"
+    "yargs": "^17.1.1"
   },
   "homepage": "https://github.com/danyim/menumonic-pin",
   "repository": {
