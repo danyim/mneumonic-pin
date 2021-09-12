@@ -1,4 +1,4 @@
-# menumonic-pin
+# mneumonic-pin
 
 Add an additional layer of complexity to your crypto wallet's mneumonic seed ([BIP39](https://raw.githubusercontent.com/bitcoin/bips/master/bip-0039/english.txt)) by using a PIN-like number<sup>[1](#1)</sup> to obscure
 
@@ -6,10 +6,12 @@ Add an additional layer of complexity to your crypto wallet's mneumonic seed ([B
 
 ```bash
 # To produce a new seed:
-$ npx github:danyim/menumonic-pin --seed="$YOUR_SEED" --pin=$YOUR_PIN
+$ npx github:danyim/mneumonic-pin --seed="$YOUR_SEED" --pin=$YOUR_PIN
+$ npx github:danyim/mneumonic-pin --pin=1234 --seed="proof auto use march present inside announce bleak nerve tilt icon scene matter crater girl field distance camp avocado lawsuit pride injury point music"
+
 
 # To return the original seed
-$ npx github:danyim/menumonic-pin --seed="$YOUR_SEED" --pin=$YOUR_PIN --unrotate
+$ npx github:danyim/mneumonic-pin --seed="$YOUR_SEED" --pin=$YOUR_PIN --unrotate
 ```
 
 ## Warnings

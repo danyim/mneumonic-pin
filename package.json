@@ -1,5 +1,5 @@
 {
-  "name": "menumonic-pin",
+  "name": "mneumonic-pin",
   "version": "0.1.0",
   "description": "Wallet mneumoic seed rotator using a PIN",
   "author": "Daniel Yim <danielyim@gmail.com>",
@@ -7,7 +7,7 @@
   "private": false,
   "main": "./dist/index.js",
   "bin": {
-    "menumonic-pin": "./dist/index.js"
+    "mneumonic-pin": "./dist/index.js"
   },
   "devDependencies": {
     "@types/jest": "^27.0.1",
@@ -20,14 +20,15 @@
   "scripts": {
     "start": "ts-node ./index.ts",
     "compile": "tsc",
+    "exec": "mneumonic-pin",
     "test": "jest"
   },
   "dependencies": {
     "yargs": "^17.1.1"
   },
-  "homepage": "https://github.com/danyim/menumonic-pin",
+  "homepage": "https://github.com/danyim/mneumonic-pin",
   "repository": {
     "type": "git",
-    "url": "https://github.com/danyim/menumonic-pin.git"
+    "url": "https://github.com/danyim/mneumonic-pin.git"
   }
 }

@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "commonjs",
-    "rootDir": ".",
+    "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "outDir": "dist",
