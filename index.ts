@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import yargs from "yargs";
-import { rotateSeed, unrotateSeed } from "./src/lib";
+import { rotateSeed, unrotateSeed } from "./lib";
 
 async function init() {
   try {

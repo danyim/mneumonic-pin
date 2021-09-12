@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const yargs_1 = __importDefault(require("yargs"));
-const lib_1 = require("./src/lib");
+const lib_1 = require("./lib");
 async function init() {
     try {
         const argv = await (0, yargs_1.default)(process.argv.slice(2))
