@@ -42,10 +42,7 @@ Usage:
     }
 
     const operation = argv.unrotate ? unrotateSeed : rotateSeed;
-    console.log(
-      `- Original seed: ${argv.seed}\n` +
-        `- New seed: ${operation(argv.seed, argv.pin)}\n`
-    );
+    console.log(operation(argv.seed, argv.pin));
   } catch (err) {}
 }
 

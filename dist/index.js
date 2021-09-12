@@ -41,8 +41,7 @@ Usage:
             throw new Error("Invalid input");
         }
         const operation = argv.unrotate ? lib_1.unrotateSeed : lib_1.rotateSeed;
-        console.log(`- Original seed: ${argv.seed}\n` +
-            `- New seed: ${operation(argv.seed, argv.pin)}\n`);
+        console.log(operation(argv.seed, argv.pin));
     }
     catch (err) { }
 }
