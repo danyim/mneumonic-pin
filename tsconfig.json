@@ -5,11 +5,14 @@
     "rootDir": ".",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "outDir": "./dist",
+    "outDir": "dist",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true
   },
-  "include": ["./index.ts", "./src"]
+  "types": ["node"],
+  "typeRoots": ["../node_modules/@types"],
+  "include": ["./index.ts", "./src"],
+  "exclude": ["node_modules", "dist"]
 }
